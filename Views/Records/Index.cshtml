@@ -1,0 +1,133 @@
+﻿@model IEnumerable<InterviewTable.Models.Record>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaidTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaidFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Check)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Account)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GBP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EUR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.USD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VAT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvDate)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Rec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastReceived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiptDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaidTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaidFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GBP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EUR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fees)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastReceived)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiptDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TransactionId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TransactionId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TransactionId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
